@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE logback>
+<configuration>
+
+	<property name="logdir" value="target" />
+	<property name="pattern.file"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS z,JST} [%thread] %-5level %logger{15} - %msg%n" />
+
+	<include resource="logback-appenders.xml" />
+
+	<root>
+		<level value="debug" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
