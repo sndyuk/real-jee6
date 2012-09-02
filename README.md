@@ -60,12 +60,3 @@ Clean install all modules to Maven local repository
 
 	$ mvn clean install
 
-
-Run web servlet server
----
-
-1. 
-
-1. Open web browser.
-
-	[http://localhost:8080/realjee-web/](http://localhost:8080/realjee-web/)
