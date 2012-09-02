@@ -9,13 +9,12 @@
 		<relativePath>../../</relativePath>
 	</parent>
 	<groupId>com.sndyuk</groupId>
-	<artifactId>real-jee-web</artifactId>
+	<artifactId>real-jee-rs</artifactId>
 	<packaging>war</packaging>
-	<name>real-jee-web</name>
+	<name>real-jee-rs</name>
 
 	<properties>
 		<profile.id>module-local</profile.id>
-		<modules.scope>provided</modules.scope>
 	</properties>
 
 	<build>
@@ -44,19 +43,6 @@
 					<autoDelete>true</autoDelete>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<webResources>
-						<resource>
-							<directory>src/${profile.id}/webapp</directory>
-							<targetPath>/</targetPath>
-							<filtering>true</filtering>
-						</resource>
-					</webResources>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -72,30 +58,30 @@
 			<version>1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-			<version>1.1.2</version>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.13</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-domain</artifactId>
 			<version>3.0.0</version>
 			<type>ejb</type>
-			<scope>${modules.scope}</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-service</artifactId>
 			<version>3.0.0</version>
 			<type>ejb</type>
-			<scope>${modules.scope}</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-security</artifactId>
 			<version>3.0.0</version>
 			<type>ejb</type>
-			<scope>${modules.scope}</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.extras</groupId>
@@ -110,8 +96,8 @@
 			<id>application</id>
 			<properties>
 				<profile.id>application</profile.id>
-				<modules.scope></modules.scope>
 			</properties>
 		</profile>
 	</profiles>
+
 </project>

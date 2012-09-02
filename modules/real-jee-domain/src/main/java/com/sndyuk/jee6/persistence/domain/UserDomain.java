@@ -2,6 +2,7 @@ package com.sndyuk.jee6.persistence.domain;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -9,17 +10,14 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.sndyuk.jee6.persistence.entity.UserEntity;
+import com.sndyuk.jee6.security.Roles;
 
 //@DeclareRoles(Roles.ADMIN) // FXIME Make secure
 @LocalBean
 @Stateless
 @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 public class UserDomain implements Dao {
-	private static Logger LOG = LoggerFactory.getLogger(UserDomain.class);
 
 	private EntityManager em;
 
@@ -31,16 +29,21 @@ public class UserDomain implements Dao {
 
 //	@RolesAllowed(Roles.ADMIN)
 	public List<UserEntity> getUsers() {
-		LOG.debug("getUsers");
-		List<UserEntity> users = this.em.createQuery("select user from UserEntity user order by user.name", UserEntity.class).getResultList();
-		return users;
+		return em.createQuery("select user from UserEntity user order by user.name", UserEntity.class).getResultList();
 	}
 
-//	@RolesAllowed(Roles.ADMIN)
+	public UserEntity getUser(Long id) {
+		return em.find(UserEntity.class, id);
+	}
+	
+	public List<UserEntity> getUsersByName(String username) {
+		return em.createQuery("select user from UserEntity user where user.name = :name", UserEntity.class).setParameter("name", username).getResultList();
+	}
+
+	@RolesAllowed(Roles.ADMIN)
 	@TransactionAttribute(TransactionAttributeType.MANDATORY)
 	public UserEntity saveUser(UserEntity user) {
-		LOG.debug("saveUser: " + user);
-		this.em.persist(user);
+		em.persist(user);
 		return user;
 	}
 }

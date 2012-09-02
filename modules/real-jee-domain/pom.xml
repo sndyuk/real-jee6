@@ -5,7 +5,8 @@
 	<parent>
 		<groupId>com.sndyuk</groupId>
 		<artifactId>real-jee</artifactId>
-		<version>1.0.0</version>
+		<version>3.0.0</version>
+		<relativePath>../../</relativePath>
 	</parent>
 	<groupId>com.sndyuk</groupId>
 	<artifactId>real-jee-domain</artifactId>
@@ -74,7 +75,7 @@
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-security</artifactId>
-			<version>1.0.0</version>
+			<version>3.0.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

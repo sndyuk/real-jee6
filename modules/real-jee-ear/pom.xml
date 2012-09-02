@@ -5,18 +5,28 @@
 	<parent>
 		<groupId>com.sndyuk</groupId>
 		<artifactId>real-jee</artifactId>
-		<version>1.0.0</version>
+		<version>3.0.0</version>
+		<relativePath>../../</relativePath>
 	</parent>
 	<groupId>com.sndyuk</groupId>
 	<artifactId>real-jee-ear</artifactId>
 	<packaging>ear</packaging>
 	<name>real-jee-ear</name>
+	
+	<properties>
+		<hsqldb-server.skip>true</hsqldb-server.skip>
+	</properties>
+	
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.7</version>
 				<configuration>
 					<generateApplicationXml>true</generateApplicationXml>
+					<includeInApplicationXml>true</includeInApplicationXml>
+					<includeLibInApplicationXml>true</includeLibInApplicationXml>
 					<modules>
 						<ejbModule>
 							<groupId>com.sndyuk</groupId>
@@ -33,11 +43,51 @@
 						<webModule>
 							<groupId>com.sndyuk</groupId>
 							<artifactId>real-jee-web</artifactId>
-							<contextRoot>/realjee6</contextRoot>
+							<contextRoot>/realjee6-web</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>com.sndyuk</groupId>
+							<artifactId>real-jee-rs</artifactId>
+							<contextRoot>/realjee6-rs</contextRoot>
 						</webModule>
 					</modules>
-					<earSourceDirectory>src/main/resources</earSourceDirectory>
+					<earSourceDirectory>src/main/ear</earSourceDirectory>
 					<workDirectory>${project.build.directory}/ear</workDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.glassfish</groupId>
+				<artifactId>maven-embedded-glassfish-plugin</artifactId>
+				<version>3.2-SNAPSHOT</version>
+				<!-- <version>3.1.1</version> -->
+				<configuration>
+					<goalPrefix>embedded-glassfish</goalPrefix>
+					<app>target/${project.artifactId}-${project.version}.ear</app>
+					<port>8080</port>
+					<autoDelete>true</autoDelete>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<id>hsqldb-server</id>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<skip>${hsqldb-server.skip}</skip>
+					<mainClass>org.hsqldb.server.Server</mainClass>
+					<arguments>
+						<argument>--database.0</argument>
+						<argument>file:${project.build.directory}/../../../ext/database/realjee6-sql</argument>
+						<argument>-dbname.0</argument>
+						<argument>realjee6</argument>
+					</arguments>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -47,25 +97,31 @@
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-security</artifactId>
 			<type>ejb</type>
-			<version>1.0.0</version>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-domain</artifactId>
 			<type>ejb</type>
-			<version>1.0.0</version>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-service</artifactId>
 			<type>ejb</type>
-			<version>1.0.0</version>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-web</artifactId>
 			<type>war</type>
-			<version>1.0.0</version>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sndyuk</groupId>
+			<artifactId>real-jee-rs</artifactId>
+			<type>war</type>
+			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

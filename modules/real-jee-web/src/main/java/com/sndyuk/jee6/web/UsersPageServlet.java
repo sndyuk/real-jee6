@@ -18,7 +18,7 @@ import com.sndyuk.jee6.service.UserService;
 @RunAs(Roles.ADMIN)
 @WebServlet(urlPatterns = { "/users" }, asyncSupported = false)
 @SuppressWarnings("serial")
-public class UserAdminServlet extends HttpServlet {
+public class UsersPageServlet extends HttpServlet {
 
 	@EJB
 	private UserService userService;

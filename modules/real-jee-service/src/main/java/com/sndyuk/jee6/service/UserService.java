@@ -20,4 +20,14 @@ public class UserService {
 	public List<UserEntity> getUsers() {
 		return userDomain.getUsers();
 	}
+	
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public List<UserEntity> getUsersByName(String username) {
+		return userDomain.getUsersByName(username);
+	}
+	
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public UserEntity getUser(Long id) {
+		return userDomain.getUser(id);
+	}
 }
