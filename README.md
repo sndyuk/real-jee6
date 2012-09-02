@@ -9,11 +9,17 @@ Quick start
 
 1. Open the other console.
 
+1. Install all modules
+
+	```
+	$ mvn clean install
+	```
+
 1. Run server one of following:
 
 
 	JSP + Servlet
-	---
+	--- 
 	
 	```
 	$ cd modules/real-jee-web
