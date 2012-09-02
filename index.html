@@ -39,17 +39,52 @@
 </li>
 <li><p>Open the other console.</p></li>
 <li>
+<p>Install all modules</p>
+
+<pre><code>$ mvn clean install
+</code></pre>
+</li>
+<li>
+<p>Run server one of following:</p>
+
+<h2>JSP + Servlet</h2>
+
+<pre><code>$ cd modules/real-jee-web
+$ ./run-server-local.sh
+</code></pre>
+
+<p><a href="http://localhost:8080/realjee-web/">http://localhost:8080/realjee-web/</a></p>
+
+<h2>JAX-RS</h2>
+
+<pre><code>$ cd modules/real-jee-rs
+$ ./run-server-local.sh
+</code></pre>
+
+<p><a href="http://localhost:8080/realjee-rs/">http://localhost:8080/realjee-rs/</a></p>
+
+<h2>EAR</h2>
+
+<ol>
+<li>
 <p>Install modules and Run glassfish server.</p>
 
 <pre><code>$ ./run-server-local.sh
 </code></pre>
 </li>
 <li>
-<p>Open web browser.</p>
+<p>Wait until the console shows: This is not work!  Please fix it.</p>
 
-<p><a href="http://localhost:8080/realjee/">http://localhost:8080/realjee/</a></p>
+<pre><code>Hit ENTER to redeploy, X to exit
+</code></pre>
 </li>
 </ol>
+<p><a href="http://localhost:8080/realjee-web/">http://localhost:8080/realjee-web/</a></p>
+</li>
+</ol><h2>Clean install all modules to Maven local repository</h2>
+
+<pre><code>$ mvn clean install
+</code></pre>
         </section>
 
         <aside id="sidebar">
