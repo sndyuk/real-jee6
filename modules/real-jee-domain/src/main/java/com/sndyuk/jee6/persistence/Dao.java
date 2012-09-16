@@ -1,4 +1,4 @@
-package com.sndyuk.jee6.persistence.domain;
+package com.sndyuk.jee6.persistence;
 
 import javax.persistence.EntityManager;
 

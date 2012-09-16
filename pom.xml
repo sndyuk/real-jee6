@@ -12,7 +12,6 @@
 		<module>modules/real-jee-domain</module>
 		<module>modules/real-jee-service</module>
 		<module>modules/real-jee-web</module>
-		<module>modules/real-jee-rs</module>
 		<module>modules/real-jee-ear</module>
 	</modules>
 

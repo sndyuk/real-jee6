@@ -8,8 +8,11 @@
 		</ol>
 		<li>JAX-RS</li>
 		<ol>
-			<li><a href="/realjee-rs/users">Get users: /realjee-rs/users</a></li>
-			<li><a href="/realjee-rs/users/1">Get user by Id: /realjee-rs/users/1</a></li>
+			<li><a href="resources/users">Get users: /realjee-rs/users</a></li>
+		</ol>
+		<li>Samples</li>
+		<ol>
+			<li><a href="managejob">Job manager(Commet sample)</a></li>
 		</ol>
 	</ol>
 </body>

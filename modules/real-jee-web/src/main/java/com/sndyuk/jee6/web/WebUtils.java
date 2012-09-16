@@ -1,6 +1,6 @@
-package com.sndyuk.jee6.rs;
+package com.sndyuk.jee6.web;
 
-public final class ResourceUtils {
+public final class WebUtils {
 
 	public static Long toId(String id) {
 		if (id == null) {

@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.sndyuk.jee6.domain.UserDomain;
 import com.sndyuk.jee6.persistence.entity.UserEntity;
 
 public class UserTest extends TestCase {

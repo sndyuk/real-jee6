@@ -17,7 +17,6 @@ Quick start
 
 1. Run server one of following:
 
-
 	JSP + Servlet
 	--- 
 	
@@ -26,20 +25,7 @@ Quick start
 	$ ./run-server-local.sh
 	```
 
-	[http://localhost:8080/realjee-web/](http://localhost:8080/realjee-web/)
-
-
-	JAX-RS
-	---
-
-	```
-	$ cd modules/real-jee-rs
-	$ ./run-server-local.sh
-	```
-	
-	[http://localhost:8080/realjee-rs/](http://localhost:8080/realjee-rs/)
-	
-
+	[http://localhost:8080/realjee/](http://localhost:8080/realjee/)
 
 
 	EAR

@@ -16,9 +16,9 @@ import org.apache.commons.lang.builder.ToStringStyle;
 import com.sndyuk.jee6.persistence.Dao;
 
 @Entity
-@Table(name = Dao.SCHEME_SECURE_DOMAIN_PREFIX + "M_USER")
+@Table(name = Dao.SCHEME_SECURE_DOMAIN_PREFIX + "M_JOB")
 @SuppressWarnings("serial")
-public class UserEntity implements Serializable {
+public class JobEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,9 +27,12 @@ public class UserEntity implements Serializable {
 	@Column(name = "name", nullable = false, length = 100)
 	private String name;
 
+	@Column(name = "message", nullable = true, length = 1024)
+	private String message;
+
 	@Column(name = "create_datetime", nullable = false)
 	private Date createDatetime;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -45,7 +48,15 @@ public class UserEntity implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Date getCreateDatetime() {
 		return createDatetime;
 	}

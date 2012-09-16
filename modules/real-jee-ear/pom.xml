@@ -45,11 +45,6 @@
 							<artifactId>real-jee-web</artifactId>
 							<contextRoot>/realjee6-web</contextRoot>
 						</webModule>
-						<webModule>
-							<groupId>com.sndyuk</groupId>
-							<artifactId>real-jee-rs</artifactId>
-							<contextRoot>/realjee6-rs</contextRoot>
-						</webModule>
 					</modules>
 					<earSourceDirectory>src/main/ear</earSourceDirectory>
 					<workDirectory>${project.build.directory}/ear</workDirectory>
@@ -114,12 +109,6 @@
 		<dependency>
 			<groupId>com.sndyuk</groupId>
 			<artifactId>real-jee-web</artifactId>
-			<type>war</type>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sndyuk</groupId>
-			<artifactId>real-jee-rs</artifactId>
 			<type>war</type>
 			<version>3.0.0</version>
 		</dependency>

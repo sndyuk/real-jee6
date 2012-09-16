@@ -1,4 +1,6 @@
-package com.sndyuk.jee6.rs;
+package com.sndyuk.jee6.web.user;
+
+import static com.sndyuk.jee6.web.WebUtils.toId;
 
 import java.util.List;
 
@@ -9,10 +11,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 import com.sndyuk.jee6.persistence.entity.UserEntity;
 import com.sndyuk.jee6.service.UserService;
-import static com.sndyuk.jee6.rs.ResourceUtils.*;
 	
 @Stateless
 @Path("/users/")
@@ -22,7 +24,7 @@ public class UserResource {
 	private UserService userService;
 
 	@GET
-	@Produces({"application/json", "text/plain"})
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<UserEntity> getUsersByName(@QueryParam("username") String username) {
 		
 		return userService.getUsersByName(username);
@@ -30,7 +32,7 @@ public class UserResource {
 	
 	@GET
 	@Path("{id}")
-	@Produces({"application/json", "text/plain"})
+	@Produces(MediaType.APPLICATION_JSON)
 	public UserEntity getUser(@PathParam("id") String id) {
 		
 		return userService.getUser(toId(id));

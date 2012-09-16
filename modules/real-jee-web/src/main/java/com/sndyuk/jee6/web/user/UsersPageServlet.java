@@ -1,4 +1,4 @@
-package com.sndyuk.jee6.web;
+package com.sndyuk.jee6.web.user;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,6 +25,7 @@ public class UsersPageServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
+		
 		doPost(req, res);
 	}
 

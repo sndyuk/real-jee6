@@ -7,7 +7,7 @@ import javax.ejb.Singleton;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
-import com.sndyuk.jee6.persistence.domain.UserDomain;
+import com.sndyuk.jee6.domain.UserDomain;
 import com.sndyuk.jee6.persistence.entity.UserEntity;
 
 @Singleton(description = "This bean can use ror controling user.")

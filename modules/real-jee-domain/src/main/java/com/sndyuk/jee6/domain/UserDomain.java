@@ -1,4 +1,4 @@
-package com.sndyuk.jee6.persistence.domain;
+package com.sndyuk.jee6.domain;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.sndyuk.jee6.persistence.Dao;
 import com.sndyuk.jee6.persistence.entity.UserEntity;
 import com.sndyuk.jee6.security.Roles;
 
