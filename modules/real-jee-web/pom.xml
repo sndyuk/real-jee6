@@ -14,7 +14,7 @@
 	<name>real-jee-web</name>
 
 	<properties>
-		<profile.id>module-local</profile.id>
+		<profile.id>main</profile.id>
 		<modules.scope>provided</modules.scope>
 	</properties>
 
@@ -32,10 +32,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.glassfish</groupId>
+				<groupId>org.glassfish.embedded</groupId>
 				<artifactId>maven-embedded-glassfish-plugin</artifactId>
-				<version>3.2-SNAPSHOT</version>
-				<!-- <version>3.1.1</version> -->
+				<version>3.1.2.2</version>
 				<configuration>
 					<goalPrefix>embedded-glassfish</goalPrefix>
 					<app>target/${project.artifactId}-${project.version}-application.war</app>
@@ -43,6 +42,13 @@
 					<contextRoot>realjee</contextRoot>
 					<autoDelete>true</autoDelete>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.glassfish.main.extras</groupId>
+						<artifactId>glassfish-embedded-all</artifactId>
+						<version>3.1.2.2</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -114,9 +120,9 @@
 			<scope>${modules.scope}</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.glassfish.extras</groupId>
+			<groupId>org.glassfish.main.extras</groupId>
 			<artifactId>glassfish-embedded-all</artifactId>
-			<version>3.2-SNAPSHOT</version>
+			<version>3.1.2.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

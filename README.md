@@ -17,7 +17,7 @@ Quick start
 
 1. Run server one of following:
 
-	JSP + Servlet
+	WER version
 	--- 
 	
 	```
@@ -28,7 +28,7 @@ Quick start
 	[http://localhost:8080/realjee/](http://localhost:8080/realjee/)
 
 
-	EAR
+	EAR version
 	---
 
 	1. Install modules and Run glassfish server.
@@ -37,13 +37,13 @@ Quick start
 		$ ./run-server-local.sh
 		```
 	
-	1. Wait until the console shows: This is not work!  Please fix it.
+	1. Wait until the console shows:
 
 		```
 		Hit ENTER to redeploy, X to exit
 		```	
 
-	[http://localhost:8080/realjee-web/](http://localhost:8080/realjee-web/)
+	[http://localhost:8080/realjee/](http://localhost:8080/realjee/)
 
 
 
